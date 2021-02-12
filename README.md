@@ -3,4 +3,7 @@
     - Virtualenv
     - Cloud Repository (github, bitbucket, etc.)
     - Initialization of your git on your server
-    - Supervisord
+    - Supervisord    
+
+## Directions: 
+    - Download or copy contents of the file onto server, run chmod +x update.sh, then ./update.sh
