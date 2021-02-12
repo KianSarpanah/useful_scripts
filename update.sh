@@ -5,6 +5,8 @@ bgblack=`tput setab 0`
 reset=`tput sgr0`
 
 read -s -p "What branch do you want to pull your repo from github?" branch
+read -s -p "What is your project path? path
+read -s -p "What is your virtual env path? env_path
 
 echo '
 __   _____________  ___ _____ _____  ______  ___  ___  _   _ _____ _____ ___  
@@ -48,15 +50,15 @@ echo "
 *                    Pull Latest Changes ${branch}                          *
 *****************************************************************************
 "
-        cd ~/MySite && git reset --hard HEAD && git fetch && git checkout ${branch}
-        cd ~/MySite && git pull origin ${branch}
+        cd ${path} && git reset --hard HEAD && git fetch && git checkout ${branch}
+        cd ${path} && git pull origin ${branch}
 
 echo "
 *****************************************************************************
 *                    Activating Virtual Environment                         *
 *****************************************************************************
 "
-        source /home/ubuntu/MySite/env/django_project/bin/activate
+        source ${env_path}/bin/activate
 
 read  -p "${red}${bgblack}$(tput bold)
 *****************************************************************************
@@ -66,7 +68,7 @@ read  -p "${red}${bgblack}$(tput bold)
                 if [[ $prompt =~ [yY](es)* ]];
                         then
 
-        pip install -r /home/ubuntu/MySite/requirements.txt
+        pip install -r ${path}/requirements.txt
                 fi
 
 read  -p "${red}${bgblack}$(tput bold)
@@ -76,7 +78,7 @@ read  -p "${red}${bgblack}$(tput bold)
 " prompt
                 if [[ $prompt =~ [yY](es)* ]];
                         then
-                python /home/ubuntu/MySite/manage.py migrate
+                python ${path}/manage.py migrate
                 fi
 
 echo "
