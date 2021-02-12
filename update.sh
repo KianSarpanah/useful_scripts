@@ -5,8 +5,8 @@ bgblack=`tput setab 0`
 reset=`tput sgr0`
 
 read -s -p "What branch do you want to pull your repo from github?" branch
-read -s -p "What is your project path? path
-read -s -p "What is your virtual env path? env_path
+read -s -p "What is your project path?" path
+read -s -p "What is your virtual env path?" env_path
 
 echo '
 __   _____________  ___ _____ _____  ______  ___  ___  _   _ _____ _____ ___  
